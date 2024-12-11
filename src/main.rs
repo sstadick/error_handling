@@ -69,13 +69,14 @@ fn main() -> DynResult<()> {
     if let Err(e) = thiserror_function("myfile.txt") {
         println!("Thiserror error: {:?}", e);
     }
-    // Anyhow error: Failed to open myfile.txt
 
+    // Anyhow error: Failed to open myfile.txt
     // Caused by:
     //     No such file or directory (os error 2)
     if let Err(e) = anyhow_function("myfile.txt") {
         println!("Anyhow error: {:?}", e);
     }
+
     // BoxDyn error: Custom { kind: NotFound, error: "Failed to open myfile.txt" }
     if let Err(e) = dyn_function("myfile.txt") {
         println!("BoxDyn error: {:?}", e);
